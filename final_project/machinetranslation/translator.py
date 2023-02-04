@@ -23,7 +23,7 @@ def english_to_french(english_text):
         text=f'{english_text}',
         model_id='en-fr'
     )
-    return french_text
+    return french_text.result['translations'][0]['translation']
 
 
 def french_to_english(french_text):
@@ -31,4 +31,4 @@ def french_to_english(french_text):
         text=f'{french_text}',
         model_id='fr-en'
     )
-    return english_text
+    return english_text.result['translations'][0]['translation']
